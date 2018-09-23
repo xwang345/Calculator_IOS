@@ -9,21 +9,37 @@
 #import "Calculator_Brain.h"
 @interface Calculator_Brain()
 @property (nonatomic, strong)NSMutableArray* items;
-
-
 @end
 
 @implementation Calculator_Brain
 
 -(void) pushItem:(double)number{
-    NSMutableArray * items = [[NSMutableArray alloc]init]; // add number to NSMutableArray
-    
+    (NSMutableArray*)self.items;
+        if(_items==nil){
+            _items = [[NSMutableArray alloc]init];
+        }else{
+            [_items addObject:0];
+        }
 }
 
--(double) calculate:()oparation{
-    
+-(double) calculate:(NSString *)oparation{
+    if ([oparation isEqualToString: @"+"]) {
+        [self popItem] +[self popItem];
+    }else if([oparation isEqualToString: @"-"]){
+        [self popItem] - [self popItem];
+    }else if([oparation isEqualToString: @"/"]) {
+        [self popItem] / [self popItem];
+    }else if([oparation isEqualToString: @"*"]){
+        [self popItem] * [self popItem];
+    }
+    return _popItem;
 }
 
-
+-(double)popItem{
+//    if([_items count] > 0){
+//        [_items removeLastObject];
+//    }
+    return 1;
+}
 
 @end

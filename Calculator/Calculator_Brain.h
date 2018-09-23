@@ -8,18 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Calculator_Brain : NSObject
-@interface Calculator_Brain()
-@property (nonatomic, strong)NSMutableArray* items;
+@interface Calculator_Brain : NSObject;
 
--(double)popItem();
-
-@end
-
-@property (strong, nonatomic)number;
-@property (nonatomic)oparation;
-@property (strong, nonatomic)popItem;
+@property (nonatomic) double number;
+@property (nonatomic) char oparation;
+@property (nonatomic) double popItem;
 
 -(void)pushItem:(double) number;
--(double) calculate: (NSSstring *) oparation;
+-(double) calculate: (NSString*) oparation;
+-(double) popItem;
+
 @end
