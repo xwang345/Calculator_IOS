@@ -12,10 +12,8 @@
 
 @property (nonatomic) double number;
 @property (nonatomic) char oparation;
-@property (nonatomic) double popItem;
 
 -(void)pushItem:(double) number;
 -(double) calculate: (NSString*) oparation;
--(double) popItem;
 
 @end

@@ -10,15 +10,17 @@
 #import "Calculator_Brain.h"
 
 int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        // insert code here...
-//        Calculator_Brain* p = [[Calculator_Brain alloc]init];
-        int num1 =0, num2 = 0;
-        NSLog(@"Please enter two numbers!");
-        NSLog(@"First Number: ");
-        scanf("%d", num1);
-        [Calculator_Brain push]
-        
-    }
+    Calculator_Brain *calculator = [[Calculator_Brain alloc] init];
+    
+    [calculator pushItem:2];
+    [calculator pushItem:2];
+    [calculator pushItem:3];
+    [calculator pushItem:4];
+    [calculator pushItem:5];
+    [calculator pushItem:6];
+    
+    NSLog(@"%f", [calculator calculate:@"*"]);
+    NSLog(@"%f", [calculator calculate:@"+"]);
     return 0;
+    
 }

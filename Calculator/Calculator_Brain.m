@@ -8,38 +8,39 @@
 
 #import "Calculator_Brain.h"
 @interface Calculator_Brain()
-@property (nonatomic, strong)NSMutableArray* items;
+@property (nonatomic, strong)NSMutableArray *items;
 @end
 
 @implementation Calculator_Brain
 
 -(void) pushItem:(double)number{
-    (NSMutableArray*)self.items;
         if(_items==nil){
             _items = [[NSMutableArray alloc]init];
         }else{
-            [_items addObject:0];
+            [self.items addObject:[NSNumber numberWithDouble:number]];
         }
 }
 
 -(double) calculate:(NSString *)oparation{
     if ([oparation isEqualToString: @"+"]) {
-        [self popItem] +[self popItem];
+       return [self popItem] + [self popItem];
     }else if([oparation isEqualToString: @"-"]){
-        [self popItem] - [self popItem];
+        return [self popItem] - [self popItem];
     }else if([oparation isEqualToString: @"/"]) {
-        [self popItem] / [self popItem];
+        return [self popItem] / [self popItem];
     }else if([oparation isEqualToString: @"*"]){
-        [self popItem] * [self popItem];
+        return [self popItem] * [self popItem];
+    } else {
+        return 0;
     }
-    return _popItem;
 }
 
--(double)popItem{
-//    if([_items count] > 0){
-//        [_items removeLastObject];
-//    }
-    return 1;
+-(double) popItem{
+    NSNumber *nsLastNum = [self.items lastObject];
+    [self.items removeLastObject];
+    
+    return [nsLastNum doubleValue];
+    
 }
 
 @end
